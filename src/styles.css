@@ -1,1 +1,414 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9fc;
+  background-image: url('assets/img/img3.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 4rem;
+}
+
+/* ===== Layout Utilities ===== */
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+section {
+  padding: 4rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #4a4aef;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Header / Hero ===== */
+header {
+  background: linear-gradient(to right, #dcdcf2, #f2f2f9);
+  text-align: center;
+  /* padding: 4rem 1rem 2rem; */
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background-color: rgb(141, 93, 93);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(141, 93, 93);
+}
+
+/* ===== Navigation ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+}
+
+header #logo,
+header div {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: pink;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: darkmagenta;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: rgb(141, 93, 93);
+}
+
+nav a.active {
+  color: white;
+  background-color: rgb(141, 93, 93);
+  font-weight: bold;
+}
+
+/* Home Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background: linear-gradient(135deg, #f9fafb, #eef2ff);
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+/* Intro Text */
+.intro {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #1f2937; /* dark gray */
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: rgb(141, 93, 93); /* blue */
+}
+
+.about-me {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #374151;
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin-right: 15px;
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: rgb(141, 93, 93);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== About Section ===== */
+
+#about {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+}
+
+#about div,
+#hero {
+  width: 50%;
+}
+
+#rightSection img {
+  object-fit: cover;
+}
+
+.name {
+  color: teal;
+  font-size: 50px;
+}
+
+/* ===== Skills Section ===== */
+.skills-grid {
+  display: block;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center; /* centers items horizontally */
+  padding-top: 5%;
+}
+
+.skills-grid h2 {
+  padding: 0.5rem 1rem;
+  background-color: #e5e5eb;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: larger;
+  padding: 20px;
+}
+
+/* ===== Projects Section ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.project-card h3 {
+  color: rgb(141, 93, 93);
+}
+
+/* ===== Contact Section ===== */
+.socials {
+  margin-top: 1rem;
+}
+
+.socials a {
+  margin-right: 1rem;
+}
+
+/* form section */
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+input,
+textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 2px solid;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+button,
+#deviceButton {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: palevioletred;
+  color: #f2f2f9;
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
+  border: none;
+  font-size: 16px;
+  position: relative; /* Ensure button is above overlays */
+  z-index: 2; /* Higher than body::after */
+}
+.device-info-section {
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Ensure section is clickable */
+}
+#deviceInfo {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  z-index: 2;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+footer a {
+  display: block;
+  margin-top: 0.5rem;
+  color: #4a4aef;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#leftSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem; /* space between heading, name, and paragraph */
+}
+
+#rightSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rightSection img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button */
+button {
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
