@@ -5,11 +5,16 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height page */
   font-family: 'Poppins', sans-serif;
   background-color: #f9f9fc;
   background-image: url('assets/img/img3.jpg');
@@ -17,10 +22,13 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
   color: #333;
   line-height: 1.6;
-  padding-bottom: 4rem;
+}
+
+main {
+  flex: 1; /* pushes footer down */
+  display: block;
 }
 
 /* ===== Layout Utilities ===== */
@@ -36,7 +44,16 @@ section {
   padding: 4rem 1rem;
   max-width: 960px;
   margin: 0 auto;
-  height: 100vh;
+  min-height: auto; /* let content decide height */
+}
+
+/* Only fullscreen where needed */
+#hero,
+#about {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -52,7 +69,6 @@ a:hover {
 header {
   background: linear-gradient(to right, #dcdcf2, #f2f2f9);
   text-align: center;
-  /* padding: 4rem 1rem 2rem; */
 }
 
 .profile-pic {
@@ -112,7 +128,7 @@ header div {
 
 .nav-links li a {
   color: darkmagenta;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .nav-links li a:hover {
@@ -130,6 +146,7 @@ nav a.active {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
   padding: 60px 10%;
   background: linear-gradient(135deg, #f9fafb, #eef2ff);
   flex-wrap: wrap; /* makes it responsive */
@@ -144,13 +161,13 @@ nav a.active {
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #1f2937; /* dark gray */
+  color: #1f2937;
 }
 
 .hero h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: rgb(141, 93, 93); /* blue */
+  color: rgb(141, 93, 93);
 }
 
 .about-me {
@@ -176,26 +193,7 @@ nav a.active {
   color: rgb(141, 93, 93);
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ===== About Section ===== */
-
-#about {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
-}
-
 #about div,
 #hero {
   width: 50%;
@@ -203,6 +201,26 @@ nav a.active {
 
 #rightSection img {
   object-fit: cover;
+}
+
+#leftSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#rightSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rightSection img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .name {
@@ -215,17 +233,16 @@ nav a.active {
   display: block;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center; /* centers items horizontally */
+  justify-content: center;
   padding-top: 5%;
 }
 
 .skills-grid h2 {
-  padding: 0.5rem 1rem;
+  padding: 20px;
   background-color: #e5e5eb;
   border-radius: 6px;
   font-weight: 500;
   font-size: larger;
-  padding: 20px;
 }
 
 /* ===== Projects Section ===== */
@@ -270,76 +287,7 @@ textarea {
   border-radius: 20px;
   font-size: 1rem;
 }
-button,
-#deviceButton {
-  padding: 10px;
-  margin-top: 20px;
-  border-radius: 20px;
-  background-color: palevioletred;
-  color: #f2f2f9;
-  cursor: pointer;
-  font-family: Poppins, sans-serif;
-  border: none;
-  font-size: 16px;
-  position: relative; /* Ensure button is above overlays */
-  z-index: 2; /* Higher than body::after */
-}
-.device-info-section {
-  margin-top: 20px;
-  text-align: center;
-  position: relative;
-  z-index: 2; /* Ensure section is clickable */
-}
-#deviceInfo {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  color: #333;
-  font-size: 14px;
-  line-height: 1.5;
-  z-index: 2;
-}
 
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #777;
-  background-color: #fafafa;
-  border-top: 1px solid #eee;
-}
-
-footer a {
-  display: block;
-  margin-top: 0.5rem;
-  color: #4a4aef;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-#leftSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem; /* space between heading, name, and paragraph */
-}
-
-#rightSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#rightSection img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .form-container {
   max-width: 500px;
@@ -347,7 +295,6 @@ footer a:hover {
   padding: 20px;
 }
 
-/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -358,7 +305,6 @@ form {
   box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Inputs */
 input, textarea {
   padding: 12px;
   border: 1px solid #ccc;
@@ -368,7 +314,6 @@ input, textarea {
   box-sizing: border-box;
 }
 
-/* Button */
 button {
   padding: 12px;
   background: #2563eb;
@@ -384,14 +329,25 @@ button:hover {
   background: #1e40af;
 }
 
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+  background-color: #fafafa;
+  border-top: 1px solid #eee;
+}
 
+footer a {
+  display: block;
+  margin-top: 0.5rem;
+  color: #4a4aef;
+}
 
-
-
-
-
-
-
+footer a:hover {
+  text-decoration: underline;
+}
 
 /* ===== Responsive Adjustments ===== */
 @media (max-width: 768px) {
